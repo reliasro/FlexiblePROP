@@ -1,0 +1,61 @@
+@page
+@model ContosoUniversity.Areas.Propiedades.Pages.dEquipoPropiedad.DetailsModel
+
+@{
+    ViewData["Title"] = "Detalles";
+}
+
+<h1><i class="far fa-list-alt"></i> Detalles</h1>
+
+<div>
+    <h4>Equipo Propiedad</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EquipoPropiedad.Descripcion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EquipoPropiedad.Descripcion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EquipoPropiedad.Marca)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EquipoPropiedad.Marca)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EquipoPropiedad.Modelo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EquipoPropiedad.Modelo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EquipoPropiedad.Serie)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EquipoPropiedad.Serie)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EquipoPropiedad.Valor)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EquipoPropiedad.Valor)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EquipoPropiedad.NombreImagen)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EquipoPropiedad.NombreImagen)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EquipoPropiedad.Propiedad)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EquipoPropiedad.Propiedad.Codigo)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.EquipoPropiedad.ID"><i class="fas fa-pen"></i> Editar</a> |
+    <a asp-page="./Index"><i class="fas fa-arrow-circle-left"></i> Regresar</a>
+</div>

@@ -1,0 +1,61 @@
+@page
+@model ContosoUniversity.Areas.Propiedades.Pages.dSeguro.DetailsModel
+
+@{
+    ViewData["Title"] = "Detalles";
+}
+
+<h1><i class="far fa-list-alt"></i> Detalles</h1>
+
+<div>
+    <h4>Seguro</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Seguro.Propiedad)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Seguro.Propiedad.Codigo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Seguro.TipoSeguro)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Seguro.TipoSeguro.Descripcion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Seguro.MonedaValorAsegurado)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Seguro.MonedaValorAsegurado.Descripcion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Seguro.Fecha)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Seguro.Fecha)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Seguro.VigenciaDesde)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Seguro.VigenciaDesde)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Seguro.VigenciaHasta)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Seguro.VigenciaHasta)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Seguro.ValorAsegurado)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Seguro.ValorAsegurado)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Seguro.ID"><i class="fas fa-pen"></i> Editar</a> |
+    <a asp-page="./Index"><i class="fas fa-arrow-circle-left"></i> Regresar</a>
+</div>

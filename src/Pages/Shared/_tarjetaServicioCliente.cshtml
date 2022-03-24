@@ -1,0 +1,64 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<!--INICIO-->
+<h2><i class="fas fa-comment-dots"></i> Servicio al cliente </h2>
+<p class="p-lg-2">Mantenga sus clientes satisfechos</p>
+<p></p>
+<div id="accordion">
+
+    <div class="card">
+        <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#sMaestros" aria-expanded="false" aria-controls="collapseOne">
+                    <i class="fas fa-folder-open"></i> Maestros
+                </button>
+            </h5>
+            <p>Lista de entidades para el funcionamiento del módulo</p>
+        </div>
+
+        <div id="sMaestros" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+                <ul class="list-group">
+                    <partial name="Items Menu/Servicio/_maestrosServicio" />
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#sOperaciones" aria-expanded="false" aria-controls="collapseTwo">
+                    <i class="fas fa-pen"></i> Operaciones
+                </button>
+            </h5>
+            <p>Operaciones que puede realizar en este módulo</p>
+        </div>
+        <div id="sOperaciones" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body">
+                <ul class="list-group">
+                    <partial name="Items Menu/Servicio/_procesosServicio" />
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingThree">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#sReportes" aria-expanded="false" aria-controls="collapseThree">
+                    <i class="fas fa-file-invoice"></i>  Reportes
+                </button>
+            </h5>
+            <p>Genere reportes y analice su contenido para toma de desiciones</p>
+        </div>
+        <div id="sReportes" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="card-body">
+                <ul class="list-group">
+                    <partial name="Items Menu/Servicio/_reportesServicio" />
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- FIN -->
+</div>

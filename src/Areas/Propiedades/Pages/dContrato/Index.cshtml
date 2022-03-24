@@ -1,0 +1,80 @@
+@page
+@model ContosoUniversity.Areas.Propiedades.Pages.dContrato.IndexModel
+
+        @{
+        ViewData["Title"] = "Contrato";
+        }
+        
+        <h1><i class="far fa-address-book"></i> Contrato </h1>
+        
+        <p>
+            <a asp-page="Create"><i class="fas fa-plus-circle"></i> Nuevo</a>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Contrato[0].Propiedad)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Contrato[0].TipoContrato)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Contrato[0].Descripcion)
+                            </th>
+                            <!--
+                            <th>
+                                @Html.DisplayNameFor(model => model.Contrato[0].FechaEntrega)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Contrato[0].FechaFirma)
+                            </th>
+                            -->
+                            <th>
+                                @Html.DisplayNameFor(model => model.Contrato[0].Firmado)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Contrato[0].Legalizado)
+                            </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Contrato) {
+                
+                 string filaSeleccionada = "";
+                 if (item.ID == Model.IDItemSeleccionado){filaSeleccionada = "table-success";}
+                
+                <tr class="@filaSeleccionada">
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Propiedad.FichaPropiedad)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TipoContrato.Descripcion)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Descripcion)
+                            </td>
+                            <!--
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FechaEntrega)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FechaFirma)
+                            </td>
+                            -->
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Firmado)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Legalizado)
+                            </td>
+                        <td>
+                            <a asp-page="./Index" asp-route-id="@item.ID"><i class="far fa-hand-pointer"></i></a> |
+                            <a asp-page="./Edit" asp-route-id="@item.ID"><i class="fas fa-pen"></i></a> |
+                            <a asp-page="./Delete" asp-route-id="@item.ID"><i class="fas fa-trash-alt"></i></a>
+                        </td>
+                </tr>
+                }
+            </tbody>
+        </table>

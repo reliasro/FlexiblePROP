@@ -1,0 +1,40 @@
+@page
+@model ContosoUniversity.Areas.Propiedades.Pages.dMedioComunicacion.DeleteModel
+
+@{
+    ViewData["Title"] = "Borrar";
+}
+
+<h1><i class="fas fa-trash-alt"></i></h1>
+
+<p>Estas seguro de borrar este registro?</p>
+<div>
+    <h4>Medio Comunicacion</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MedioComunicacion.Descripcion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MedioComunicacion.Descripcion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MedioComunicacion.Valor)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MedioComunicacion.Valor)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MedioComunicacion.Compania)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MedioComunicacion.Compania.Descripcion)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="MedioComunicacion.ID" />
+        <input type="submit" value="Borrar" class="btn btn-danger" /> |
+        <a asp-page="./Index"><i class="fas fa-arrow-circle-left"></i> Regresar</a>
+    </form>
+</div>

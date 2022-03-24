@@ -1,0 +1,43 @@
+@page
+@model ContosoUniversity.Areas.Propiedades.Pages.dConversionMoneda.DetailsModel
+
+@{
+    ViewData["Title"] = "Detalles";
+}
+
+<h1><i class="far fa-list-alt"></i> Detalles</h1>
+
+<div>
+    <h4>Conversion Moneda</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ConversionMoneda.MonedaOrigen)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ConversionMoneda.MonedaOrigen.Descripcion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ConversionMoneda.MonedaDestino)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ConversionMoneda.MonedaDestino.Descripcion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ConversionMoneda.FactorConversion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ConversionMoneda.FactorConversion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ConversionMoneda.FechaConversion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ConversionMoneda.FechaConversion)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.ConversionMoneda.ID"><i class="fas fa-pen"></i> Editar</a> |
+    <a asp-page="./Index"><i class="fas fa-arrow-circle-left"></i> Regresar</a>
+</div>

@@ -1,0 +1,160 @@
+@page
+@model ContosoUniversity.Areas.Propiedades.Pages.dPropietario.IndexModel
+
+@{
+ViewData["Title"] = "Cliente";
+}
+        
+<h1><i class="fas fa-user-tie"></i> Propietario </h1>
+        
+<p>
+    <a asp-page="Create"> Nuevo</a>
+</p>
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Cliente[0].Codigo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Cliente[0].PrimerNombre)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Cliente[0].SegundoNombre)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Cliente[0].PrimerApellido)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Cliente[0].SegundoApellido)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Cliente[0].Cedula)
+                    </th>
+                    <!--
+                    <th>
+                        @Html.DisplayNameFor(model => model.Cliente[0].FechaNacimiento)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Cliente[0].Alias)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Cliente[0].Sexo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Cliente[0].Calle)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Cliente[0].Edificio)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Cliente[0].Numero)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Cliente[0].Telefono)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Cliente[0].Casado)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Cliente[0].Celular)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Cliente[0].Foto)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Cliente[0].Website)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Cliente[0].RolCliente)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Cliente[0].PaisNacimiento)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Cliente[0].SectorDondeVive)
+                    </th>
+                    -->
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Cliente) {
+                
+            string filaSeleccionada = "";
+            if (item.ID == Model.IDItemSeleccionado){filaSeleccionada = "table-success";}
+                
+        <tr class="@filaSeleccionada">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Codigo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PrimerNombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SegundoNombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PrimerApellido)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SegundoApellido)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cedula)
+                    </td>
+                    <!--
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FechaNacimiento)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Alias)
+                    </td>
+                            
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Sexo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Calle)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Edificio)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Numero)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Telefono)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Casado)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Celular)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Foto)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Website)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RolCliente.Codigo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PaisNacimiento.Descripcion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SectorDondeVive.Descripcion)
+                    </td>
+                    -->
+                <td>
+                    <a asp-page="./Index" asp-route-id="@item.ID"><i class="far fa-hand-pointer"></i></a> |
+                    <a asp-page="./Edit" asp-route-id="@item.ID"><i class="fas fa-pen"></i></a> |
+                    <a asp-page="./Delete" asp-route-id="@item.ID"><i class="fas fa-trash-alt"></i></a>
+                </td>
+        </tr>
+        }
+    </tbody>
+</table>

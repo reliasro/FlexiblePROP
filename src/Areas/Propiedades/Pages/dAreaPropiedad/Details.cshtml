@@ -1,0 +1,43 @@
+@page
+@model ContosoUniversity.Areas.Propiedades.Pages.dAreaPropiedad.DetailsModel
+
+@{
+    ViewData["Title"] = "Detalles";
+}
+
+<h1><i class="far fa-list-alt"></i> Detalles</h1>
+
+<div>
+    <h4>Area Propiedad</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AreaPropiedad.UnidadEspacio)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AreaPropiedad.UnidadEspacio.Descripcion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AreaPropiedad.Propiedad)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AreaPropiedad.Propiedad.Codigo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AreaPropiedad.Descripcion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AreaPropiedad.Descripcion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AreaPropiedad.CantidadEspacio)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AreaPropiedad.CantidadEspacio)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.AreaPropiedad.ID"><i class="fas fa-pen"></i> Editar</a> |
+    <a asp-page="./Index"><i class="fas fa-arrow-circle-left"></i> Regresar</a>
+</div>

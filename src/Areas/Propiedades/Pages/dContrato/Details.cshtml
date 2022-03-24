@@ -1,0 +1,61 @@
+@page
+@model ContosoUniversity.Areas.Propiedades.Pages.dContrato.DetailsModel
+
+@{
+    ViewData["Title"] = "Detalles";
+}
+
+<h1><i class="far fa-list-alt"></i> Detalles</h1>
+
+<div>
+    <h4>Contrato</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contrato.Propiedad)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contrato.Propiedad.Codigo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contrato.TipoContrato)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contrato.TipoContrato.Descripcion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contrato.Descripcion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contrato.Descripcion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contrato.FechaEntrega)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contrato.FechaEntrega)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contrato.FechaFirma)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contrato.FechaFirma)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contrato.Firmado)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contrato.Firmado)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contrato.Legalizado)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contrato.Legalizado)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Contrato.ID"><i class="fas fa-pen"></i> Editar</a> |
+    <a asp-page="./Index"><i class="fas fa-arrow-circle-left"></i> Regresar</a>
+</div>

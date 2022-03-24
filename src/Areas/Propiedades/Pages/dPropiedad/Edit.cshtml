@@ -1,0 +1,208 @@
+@page
+@model ContosoUniversity.Areas.Propiedades.Pages.dPropiedad.EditModel
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<h1><i class="fas fa-pen"></i> Editar</h1>
+
+<h4>Propiedad</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+
+        <form method="post">
+
+            <div class="row">
+
+                <div class="col-md-6">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Propiedad.ID" />
+                    <div class="form-group">
+                        <label asp-for="Propiedad.PropietarioID" class="control-label"></label>
+                        <select asp-for="Propiedad.PropietarioID" class="form-control" asp-items="ViewBag.PropietarioID">
+                            <option value="">Seleccionar...</option>
+                        </select>
+                        <span asp-validation-for="Propiedad.PropietarioID" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Propiedad.TipoPropiedadID" class="control-label"></label>
+                        <select asp-for="Propiedad.TipoPropiedadID" class="form-control" asp-items="ViewBag.TipoPropiedadID">
+                            <option value="">Seleccionar...</option>
+                        </select>
+                        <span asp-validation-for="Propiedad.TipoPropiedadID" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Propiedad.VendedorID" class="control-label"></label>
+                        <select asp-for="Propiedad.VendedorID" class="form-control" asp-items="ViewBag.VendedorID">
+                            <option value="">Seleccionar...</option>
+                        </select>
+                        <span asp-validation-for="Propiedad.VendedorID" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Propiedad.UnidadID" class="control-label"></label>
+                        <select asp-for="Propiedad.UnidadID" class="form-control" asp-items="ViewBag.UnidadID">
+                            <option value="">Seleccionar...</option>
+                        </select>
+                        <span asp-validation-for="Propiedad.UnidadID" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Propiedad.MonedaID" class="control-label"></label>
+                        <select asp-for="Propiedad.MonedaID" class="form-control" asp-items="ViewBag.MonedaID">
+                            <option value="">Seleccionar...</option>
+                        </select>
+                        <span asp-validation-for="Propiedad.MonedaID" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Propiedad.Codigo" class="control-label"></label>
+                        <input asp-for="Propiedad.Codigo" class="form-control" />
+                        <span asp-validation-for="Propiedad.Codigo" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Propiedad.Descripcion" class="control-label"></label>
+                        <input asp-for="Propiedad.Descripcion" class="form-control" />
+                        <span asp-validation-for="Propiedad.Descripcion" class="text-danger"></span>
+                    </div>
+                    <div>
+                        <img src="~/images/Villa1.png" class="img-fluid" alt="Image" />
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Propiedad.FechaInicioConstruccion" class="control-label"></label>
+                        <input asp-for="Propiedad.FechaInicioConstruccion" class="form-control" />
+                        <span asp-validation-for="Propiedad.FechaInicioConstruccion" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Propiedad.FechaFinConstruccion" class="control-label"></label>
+                        <input asp-for="Propiedad.FechaFinConstruccion" class="form-control" />
+                        <span asp-validation-for="Propiedad.FechaFinConstruccion" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Propiedad.CostoConstruccion" class="control-label"></label>
+                        <input asp-for="Propiedad.CostoConstruccion" class="form-control" />
+                        <span asp-validation-for="Propiedad.CostoConstruccion" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Propiedad.MetrosConstruccion" class="control-label"></label>
+                        <input asp-for="Propiedad.MetrosConstruccion" class="form-control" />
+                        <span asp-validation-for="Propiedad.MetrosConstruccion" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Propiedad.Constructora" class="control-label"></label>
+                        <input asp-for="Propiedad.Constructora" class="form-control" />
+                        <span asp-validation-for="Propiedad.Constructora" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Propiedad.FechaVenta" class="control-label"></label>
+                        <input asp-for="Propiedad.FechaVenta" class="form-control" />
+                        <span asp-validation-for="Propiedad.FechaVenta" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Propiedad.FechaEntrega" class="control-label"></label>
+                        <input asp-for="Propiedad.FechaEntrega" class="form-control" />
+                        <span asp-validation-for="Propiedad.FechaEntrega" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Propiedad.FechaEntregaReal" class="control-label"></label>
+                        <input asp-for="Propiedad.FechaEntregaReal" class="form-control" />
+                        <span asp-validation-for="Propiedad.FechaEntregaReal" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Propiedad.FechaEntregaTitulo" class="control-label"></label>
+                        <input asp-for="Propiedad.FechaEntregaTitulo" class="form-control" />
+                        <span asp-validation-for="Propiedad.FechaEntregaTitulo" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Propiedad.Latitud" class="control-label"></label>
+                        <input asp-for="Propiedad.Latitud" class="form-control" />
+                        <span asp-validation-for="Propiedad.Latitud" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Propiedad.Longitud" class="control-label"></label>
+                        <input asp-for="Propiedad.Longitud" class="form-control" />
+                        <span asp-validation-for="Propiedad.Longitud" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Propiedad.EstadoPropiedadID" class="control-label"></label>
+                        <select asp-for="Propiedad.EstadoPropiedadID" class="form-control" asp-items="ViewBag.EstadoPropiedadID">
+                            <option value="">Seleccionar...</option>
+                        </select>
+                        <span asp-validation-for="Propiedad.EstadoPropiedadID" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Propiedad.DireccionEnProyecto" class="control-label"></label>
+                        <input asp-for="Propiedad.DireccionEnProyecto" class="form-control" />
+                        <span asp-validation-for="Propiedad.DireccionEnProyecto" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Propiedad.PrecioLista" class="control-label"></label>
+                        <input asp-for="Propiedad.PrecioLista" class="form-control" />
+                        <span asp-validation-for="Propiedad.PrecioLista" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Propiedad.PrecioVenta" class="control-label"></label>
+                        <input asp-for="Propiedad.PrecioVenta" class="form-control" />
+                        <span asp-validation-for="Propiedad.PrecioVenta" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Propiedad.PrecioRentaDiario" class="control-label"></label>
+                        <input asp-for="Propiedad.PrecioRentaDiario" class="form-control" />
+                        <span asp-validation-for="Propiedad.PrecioRentaDiario" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Propiedad.Comision" class="control-label"></label>
+                        <input asp-for="Propiedad.Comision" class="form-control" />
+                        <span asp-validation-for="Propiedad.Comision" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Propiedad.ComisionRenta" class="control-label"></label>
+                        <input asp-for="Propiedad.ComisionRenta" class="form-control" />
+                        <span asp-validation-for="Propiedad.ComisionRenta" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Propiedad.Notas" class="control-label"></label>
+                        <input asp-for="Propiedad.Notas" class="form-control" />
+                        <span asp-validation-for="Propiedad.Notas" class="text-danger"></span>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="Propiedad.DisponibleParaRenta" /> @Html.DisplayNameFor(model => model.Propiedad.DisponibleParaRenta)
+                        </label>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <input type="submit" value="Salvar" class="btn btn-primary btn-block" />
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div>
+                                <a asp-page="./Index"><i class="fas fa-arrow-circle-left"></i> Regresar</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </form>
+        <partial name="_detallesPropiedad.cshtml" model="@Model.Propiedad">
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

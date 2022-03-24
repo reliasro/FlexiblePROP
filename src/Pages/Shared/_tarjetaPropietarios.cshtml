@@ -1,0 +1,62 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<!--INICIO-->
+<h2><i class="fas fa-user"></i> Propietarios </h2>
+<p class="p-lg-2">Control de sus clientes </p>
+<p></p>
+<div id="accordion">
+
+    <div class="card">
+        <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#oMaestros" aria-expanded="false" aria-controls="collapseOne">
+                    <i class="fas fa-folder-open"></i> Maestros
+                </button>
+            </h5>
+            <p>Lista de entidades para el funcionamiento del módulo</p>
+        </div>
+
+        <div id="oMaestros" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+                <partial name="Items Menu/Propietario/_maestrosPropietario" />
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#oOperaciones" aria-expanded="false" aria-controls="collapseTwo">
+                    <i class="fas fa-pen"></i> Operaciones
+                </button>
+            </h5>
+            <p>Operaciones que puede realizar en este módulo</p>
+        </div>
+        <div id="oOperaciones" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body">
+                <ul class="list-group">
+                    <partial name="Items Menu/Propietario/_procesosPropietario" />
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingThree">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#oReportes" aria-expanded="false" aria-controls="collapseThree">
+                    <i class="fas fa-file-invoice"></i>  Reportes
+                </button>
+            </h5>
+            <p>Genere reportes y analice su contenido para toma de desiciones</p>
+        </div>
+        <div id="oReportes" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="card-body">
+                <ul class="list-group">
+                    <partial name="Items Menu/Propietario/_reportesPropietario" />
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- FIN -->
+</div>

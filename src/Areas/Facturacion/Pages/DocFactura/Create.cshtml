@@ -1,0 +1,89 @@
+@page
+@model ContosoUniversity.Areas.Facturacion.Pages.DocFactura.CreateModel
+
+@{
+    ViewData["Title"] = "Crear";
+}
+
+<h1>Crear</h1>
+
+<h4>Factura</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Factura.CodigoFactura" class="control-label"></label>
+                <input asp-for="Factura.CodigoFactura" class="form-control" />
+                <span asp-validation-for="Factura.CodigoFactura" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Factura.Villa" class="control-label"></label>
+                <input asp-for="Factura.Villa" class="form-control" />
+                <span asp-validation-for="Factura.Villa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Factura.PropietarioVilla" class="control-label"></label>
+                <input asp-for="Factura.PropietarioVilla" class="form-control" />
+                <span asp-validation-for="Factura.PropietarioVilla" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Factura.ValorFactura" class="control-label"></label>
+                <input asp-for="Factura.ValorFactura" class="form-control" />
+                <span asp-validation-for="Factura.ValorFactura" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Factura.Emisor" class="control-label"></label>
+                <input asp-for="Factura.Emisor" class="form-control" />
+                <span asp-validation-for="Factura.Emisor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Factura.Moneda" class="control-label"></label>
+                <input asp-for="Factura.Moneda" class="form-control" />
+                <span asp-validation-for="Factura.Moneda" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Factura.FechaEmision" class="control-label"></label>
+                <input asp-for="Factura.FechaEmision" class="form-control" />
+                <span asp-validation-for="Factura.FechaEmision" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Factura.FechaVencimiento" class="control-label"></label>
+                <input asp-for="Factura.FechaVencimiento" class="form-control" />
+                <span asp-validation-for="Factura.FechaVencimiento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Factura.LecturaInicial" class="control-label"></label>
+                <input asp-for="Factura.LecturaInicial" class="form-control" />
+                <span asp-validation-for="Factura.LecturaInicial" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Factura.LecturaFinal" class="control-label"></label>
+                <input asp-for="Factura.LecturaFinal" class="form-control" />
+                <span asp-validation-for="Factura.LecturaFinal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Factura.BalanceActual" class="control-label"></label>
+                <input asp-for="Factura.BalanceActual" class="form-control" />
+                <span asp-validation-for="Factura.BalanceActual" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Factura.Observaciones" class="control-label"></label>
+                <input asp-for="Factura.Observaciones" class="form-control" />
+                <span asp-validation-for="Factura.Observaciones" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Crear" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Regresar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

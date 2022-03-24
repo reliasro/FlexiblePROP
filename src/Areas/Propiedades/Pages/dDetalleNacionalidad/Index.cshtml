@@ -1,0 +1,52 @@
+@page
+@model ContosoUniversity.Areas.Propiedades.Pages.dDetalleNacionalidad.IndexModel
+
+        @{
+        ViewData["Title"] = "DetalleNacionalidad";
+        }
+        
+        <h1><i class="far fa-address-book"></i> DetalleNacionalidad </h1>
+        
+        <p>
+            <a asp-page="Create"><i class="fas fa-plus-circle"></i> Nuevo</a>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DetalleNacionalidad[0].Nacionalidad)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DetalleNacionalidad[0].Cliente)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DetalleNacionalidad[0].Descripcion)
+                            </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.DetalleNacionalidad) {
+                
+                 string filaSeleccionada = "";
+                 if (item.ID == Model.IDItemSeleccionado){filaSeleccionada = "table-success";}
+                
+                <tr class="@filaSeleccionada">
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Nacionalidad.Descripcion)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Cliente.Cedula)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Descripcion)
+                            </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                        </td>
+                </tr>
+                }
+            </tbody>
+        </table>

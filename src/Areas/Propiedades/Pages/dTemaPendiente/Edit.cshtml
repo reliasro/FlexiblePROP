@@ -1,0 +1,60 @@
+@page
+@model ContosoUniversity.Areas.Propiedades.Pages.dTemaPendiente.EditModel
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<h1><i class="fas fa-pen"></i> Editar</h1>
+
+<h4>Tema Pendiente</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="TemaPendiente.ID" />
+            <div class="form-group">
+                <label asp-for="TemaPendiente.PropiedadID" class="control-label"></label>
+                <select asp-for="TemaPendiente.PropiedadID" class="form-control" asp-items="ViewBag.PropiedadID"></select>
+                <span asp-validation-for="TemaPendiente.PropiedadID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TemaPendiente.TipoContratoID" class="control-label"></label>
+                <select asp-for="TemaPendiente.TipoContratoID" class="form-control" asp-items="ViewBag.TipoContratoID"></select>
+                <span asp-validation-for="TemaPendiente.TipoContratoID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TemaPendiente.Tema" class="control-label"></label>
+                <input asp-for="TemaPendiente.Tema" class="form-control" />
+                <span asp-validation-for="TemaPendiente.Tema" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TemaPendiente.Descripcion" class="control-label"></label>
+                <input asp-for="TemaPendiente.Descripcion" class="form-control" />
+                <span asp-validation-for="TemaPendiente.Descripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TemaPendiente.FechaReporte" class="control-label"></label>
+                <input asp-for="TemaPendiente.FechaReporte" class="form-control" />
+                <span asp-validation-for="TemaPendiente.FechaReporte" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TemaPendiente.Estatus" class="control-label"></label>
+                <input asp-for="TemaPendiente.Estatus" class="form-control" />
+                <span asp-validation-for="TemaPendiente.Estatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index"><i class="fas fa-arrow-circle-left"></i> Regresar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,46 @@
+@page
+@model ContosoUniversity.Areas.Propiedades.Pages.dAreaPropiedad.DeleteModel
+
+@{
+    ViewData["Title"] = "Borrar";
+}
+
+<h1><i class="fas fa-trash-alt"></i></h1>
+
+<p>Estas seguro de borrar este registro?</p>
+<div>
+    <h4>Area Propiedad</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AreaPropiedad.UnidadEspacio)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AreaPropiedad.UnidadEspacio.Descripcion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AreaPropiedad.Propiedad)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AreaPropiedad.Propiedad.Codigo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AreaPropiedad.Descripcion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AreaPropiedad.Descripcion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AreaPropiedad.CantidadEspacio)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AreaPropiedad.CantidadEspacio)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="AreaPropiedad.ID" />
+        <input type="submit" value="Borrar" class="btn btn-danger" /> |
+        <a asp-page="./Index"><i class="fas fa-arrow-circle-left"></i> Regresar</a>
+    </form>
+</div>

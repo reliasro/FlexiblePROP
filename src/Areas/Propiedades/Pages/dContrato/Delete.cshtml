@@ -1,0 +1,64 @@
+@page
+@model ContosoUniversity.Areas.Propiedades.Pages.dContrato.DeleteModel
+
+@{
+    ViewData["Title"] = "Borrar";
+}
+
+<h1><i class="fas fa-trash-alt"></i></h1>
+
+<p>Estas seguro de borrar este registro?</p>
+<div>
+    <h4>Contrato</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contrato.Propiedad)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contrato.Propiedad.Codigo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contrato.TipoContrato)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contrato.TipoContrato.Descripcion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contrato.Descripcion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contrato.Descripcion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contrato.FechaEntrega)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contrato.FechaEntrega)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contrato.FechaFirma)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contrato.FechaFirma)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contrato.Firmado)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contrato.Firmado)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contrato.Legalizado)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contrato.Legalizado)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Contrato.ID" />
+        <input type="submit" value="Borrar" class="btn btn-danger" /> |
+        <a asp-page="./Index"><i class="fas fa-arrow-circle-left"></i> Regresar</a>
+    </form>
+</div>

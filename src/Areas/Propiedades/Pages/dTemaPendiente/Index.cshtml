@@ -1,0 +1,74 @@
+@page
+@model ContosoUniversity.Areas.Propiedades.Pages.dTemaPendiente.IndexModel
+
+        @{
+        ViewData["Title"] = "TemaPendiente";
+        }
+        
+        <h1><i class="far fa-address-book"></i> Tema Pendiente </h1>
+        
+        <p>
+            <a asp-page="Create"><i class="fas fa-plus-circle"></i> Nuevo</a>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.TemaPendiente[0].Propiedad)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.TemaPendiente[0].TipoContrato)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.TemaPendiente[0].Tema)
+                            </th>
+                            <!--
+                            <th>
+                                @Html.DisplayNameFor(model => model.TemaPendiente[0].Descripcion)
+                            </th>
+                            -->
+                            <th>
+                                @Html.DisplayNameFor(model => model.TemaPendiente[0].FechaReporte)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.TemaPendiente[0].Estatus)
+                            </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.TemaPendiente) {
+                
+                 string filaSeleccionada = "";
+                 if (item.ID == Model.IDItemSeleccionado){filaSeleccionada = "table-success";}
+                
+                <tr class="@filaSeleccionada">
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Propiedad.FichaPropiedad)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TipoContrato.Descripcion)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Tema)
+                            </td>
+                            <!--
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Descripcion)
+                            </td>
+                            -->
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FechaReporte)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Estatus)
+                            </td>
+                        <td>
+                            <a asp-page="./Index" asp-route-id="@item.ID"><i class="far fa-hand-pointer"></i></a> |
+                            <a asp-page="./Edit" asp-route-id="@item.ID"><i class="fas fa-pen"></i></a> |
+                            <a asp-page="./Delete" asp-route-id="@item.ID"><i class="fas fa-trash-alt"></i></a>
+                        </td>
+                </tr>
+                }
+            </tbody>
+        </table>

@@ -1,0 +1,45 @@
+@page
+@model ContosoUniversity.Areas.Propiedades.Pages.dMedioComunicacion.EditModel
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<h1><i class="fas fa-pen"></i> Editar</h1>
+
+<h4>Medio Comunicacion</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="MedioComunicacion.ID" />
+            <div class="form-group">
+                <label asp-for="MedioComunicacion.CompaniaID" class="control-label"></label>
+                <select asp-for="MedioComunicacion.CompaniaID" class="form-control" asp-items="ViewBag.CompaniaID"></select>
+                <span asp-validation-for="MedioComunicacion.CompaniaID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MedioComunicacion.Descripcion" class="control-label"></label>
+                <input asp-for="MedioComunicacion.Descripcion" class="form-control" />
+                <span asp-validation-for="MedioComunicacion.Descripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MedioComunicacion.Valor" class="control-label"></label>
+                <input asp-for="MedioComunicacion.Valor" class="form-control" />
+                <span asp-validation-for="MedioComunicacion.Valor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index"><i class="fas fa-arrow-circle-left"></i> Regresar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

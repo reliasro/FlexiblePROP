@@ -1,0 +1,102 @@
+@page
+@model ContosoUniversity.Pages.Facturacion.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Factura[0].CodigoFactura)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Factura[0].Villa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Factura[0].PropietarioVilla)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Factura[0].ValorFactura)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Factura[0].Emisor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Factura[0].Moneda)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Factura[0].FechaEmision)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Factura[0].FechaVencimiento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Factura[0].LecturaInicial)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Factura[0].LecturaFinal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Factura[0].BalanceActual)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Factura[0].Observaciones)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Factura) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodigoFactura)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Villa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PropietarioVilla)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorFactura)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Emisor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Moneda)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaEmision)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaVencimiento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LecturaInicial)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LecturaFinal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BalanceActual)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Observaciones)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,85 @@
+@page
+@model ContosoUniversity.Areas.Propiedades.Pages.dVendedor.CreateModel
+
+@{
+    ViewData["Title"] = "Crear";
+}
+
+<h1>Crear</h1>
+
+<h4>Vendedor</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Vendedor.InmobiliariaID" class="control-label"></label>
+                <select asp-for="Vendedor.InmobiliariaID" class ="form-control" asp-items="ViewBag.InmobiliariaID">
+                    <option value="">Seleccionar...</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vendedor.Codigo" class="control-label"></label>
+                <input asp-for="Vendedor.Codigo" class="form-control" />
+                <span asp-validation-for="Vendedor.Codigo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vendedor.Apellidos" class="control-label"></label>
+                <input asp-for="Vendedor.Apellidos" class="form-control" />
+                <span asp-validation-for="Vendedor.Apellidos" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vendedor.Nombre" class="control-label"></label>
+                <input asp-for="Vendedor.Nombre" class="form-control" />
+                <span asp-validation-for="Vendedor.Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vendedor.Cedula" class="control-label"></label>
+                <input asp-for="Vendedor.Cedula" class="form-control" />
+                <span asp-validation-for="Vendedor.Cedula" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vendedor.FechaNacimiento" class="control-label"></label>
+                <input asp-for="Vendedor.FechaNacimiento" class="form-control" />
+                <span asp-validation-for="Vendedor.FechaNacimiento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vendedor.Direccion" class="control-label"></label>
+                <input asp-for="Vendedor.Direccion" class="form-control" />
+                <span asp-validation-for="Vendedor.Direccion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vendedor.Telefono" class="control-label"></label>
+                <input asp-for="Vendedor.Telefono" class="form-control" />
+                <span asp-validation-for="Vendedor.Telefono" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vendedor.Celular" class="control-label"></label>
+                <input asp-for="Vendedor.Celular" class="form-control" />
+                <span asp-validation-for="Vendedor.Celular" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vendedor.Website" class="control-label"></label>
+                <input asp-for="Vendedor.Website" class="form-control" />
+                <span asp-validation-for="Vendedor.Website" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vendedor.NombreEmpresa" class="control-label"></label>
+                <input asp-for="Vendedor.NombreEmpresa" class="form-control" />
+                <span asp-validation-for="Vendedor.NombreEmpresa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Crear" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Regresar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

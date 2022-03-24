@@ -1,0 +1,64 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@* Si voy a generar grupos con enlaces, uso <DIV> y <A>. Si el grupo no tendra enlaces, uso <UL> y <LI>*@
+
+@* Estilo navegacion con pestañas *@
+<ul class="nav nav-tabs" id="prop-mg1" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link active" id="inicio-tab" data-toggle="tab" href="#gprop1" aria-selected="true">Basicas</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="prop-mg2" data-toggle="tab" href="#gprop2" aria-selected="false">Avanzadas</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="prop-mg3" data-toggle="tab" href="#gprop3" aria-selected="false">Regionales</a>
+    </li>
+</ul>
+
+@*Contenido de las pestañas*@
+<div class="tab-content p-3 border-right border-left">
+
+    <div class="tab-pane active" id="gprop1" role="tabpanel" aria-labelledby="inicio-tab">
+        <div class="list-group">
+            <a class="list-group-item" asp-area="" asp-page="/Configuraciones/Index" asp-route-moduloConfig="Propiedad"><i class="fas fa-cog"></i> Configuración del Módulo</a>
+            <a class="list-group-item" asp-area="Propiedades" asp-page="/dPropiedad/Index"><i class="fas fa-home"></i> Propiedad</a>
+            <a class="list-group-item" asp-area="Propiedades" asp-page="/dPropietario/Index"><i class="fas fa-user-tie"></i> Propietario</a>
+            <a class="list-group-item" asp-area="Propiedades" asp-page="/dGrupoPropiedad/Index"><i class="fas fa-baby"></i> Grupo Propiedad</a>
+            <a class="list-group-item" asp-area="Propiedades" asp-page="/dTipoPropiedad/Index"><i class="fas fa-table"></i> Tipo Propiedad</a>
+            <a class="list-group-item" asp-area="Propiedades" asp-page="/dEstadoPropiedad/Index"><i class="fas fa-undo-alt"></i> Estado Propiedad</a>
+            <a class="list-group-item" asp-area="Propiedades" asp-page="/dRolCliente/Index"><i class="fas fa-business-time"></i> Tipo Cliente</a>
+        </div>
+    </div>
+
+    <div class="tab-pane fade " id="gprop2" role="tabpanel" aria-labelledby="mapa-tab">
+        <div class="list-group">
+            <a class="list-group-item" asp-area="Propiedades" asp-page="/dMoneda/Index"><i class="fas fa-compress-arrows-alt"></i> Moneda</a>
+            <a class="list-group-item" asp-area="Propiedades" asp-page="/dUnidad/Index"><i class="fas fa-sitemap"></i> Unidad Medida</a>
+            <a class="list-group-item" asp-area="Propiedades" asp-page="/dConversionMoneda/Index"><i class="fas fa-poll"></i> Factor Conversion</a>
+            <a class="list-group-item" asp-area="Propiedades" asp-page="/dTipoContrato/Index"><i class="fas fa-file-video"></i> Tipo Contrato</a>
+            <a class="list-group-item" asp-area="Propiedades" asp-page="/dParentesco/Index"><i class="fas fa-file-code"></i> Parentesco</a>
+            <a class="list-group-item" asp-area="Propiedades" asp-page="/dNacionalidad/Index"><i class="fas fa-power-off"></i> Nacionalidad</a>
+            <a class="list-group-item" asp-area="Propiedades" asp-page="/dTipoEquipo/Index"><i class="far fa-hand-point-right"></i> Tipo Equipo</a>
+            <a class="list-group-item" asp-area="Propiedades" asp-page="/dTipoSeguro/Index"><i class="fas fa-hand-point-right"></i> Tipo Seguro</a>
+        </div>
+    </div>
+
+    <div class="tab-pane fade " id="gprop3" role="tabpanel" aria-labelledby="proyecto-tab">
+        <div class="list-group">
+            <a class="list-group-item" asp-area="Propiedades" asp-page="/dInmobiliaria/Index"><i class="fas fa-exchange-alt"></i> Agencias Inmobiliarias</a>
+            <a class="list-group-item" asp-area="Propiedades" asp-page="/dVendedor/Index"><i class="fas fa-walking"></i> Vendedor</a>
+            <a class="list-group-item" asp-area="Propiedades" asp-page="/dTipoCompania/Index"><i class="fas fa-id-badge"></i> Tipo Compania</a>
+            <a class="list-group-item" asp-area="Propiedades" asp-page="/dGrupoCompania/Index"><i class="fas fa-share"></i> Grupo Compania</a>
+            <a class="list-group-item" asp-area="Propiedades" asp-page="/dCompania/Index"><i class="fas fa-arrows-alt-h"></i> Compania</a>
+            <a class="list-group-item" asp-area="Propiedades" asp-page="/dMedioComunicacion/Index"><i class="fas fa-clipboard"></i> Medio Comunicacion</a>
+            <a class="list-group-item" asp-area="Propiedades" asp-page="/dPais/Index"><i class="far fa-hand-pointer"></i> País</a>
+            <a class="list-group-item" asp-area="Propiedades" asp-page="dCiudad/Index"><i class="fas fa-chart-area"></i> Ciudad</a>
+            <a class="list-group-item" asp-area="Propiedades" asp-page="dMunicipio/Index"><i class="far fa-window-maximize"></i> Municipio</a>
+            <a class="list-group-item" asp-area="Propiedades" asp-page="/dSector/Index"><i class="fas fa-envelope-square"></i> Sector</a>
+        </div>
+    </div>
+
+</div>
+
+

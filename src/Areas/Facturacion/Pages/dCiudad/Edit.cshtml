@@ -1,0 +1,40 @@
+@page
+@model ContosoUniversity.Areas.Facturacion.Pages.dCiudad.EditModel
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<h1><i class="fas fa-pen"></i> Editar</h1>
+
+<h4>Ciudad</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Ciudad.ID" />
+            <div class="form-group">
+                <label asp-for="Ciudad.PaisID" class="control-label"></label>
+                <select asp-for="Ciudad.PaisID" class="form-control" asp-items="ViewBag.PaisID"></select>
+                <span asp-validation-for="Ciudad.PaisID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ciudad.Descripcion" class="control-label"></label>
+                <input asp-for="Ciudad.Descripcion" class="form-control" />
+                <span asp-validation-for="Ciudad.Descripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index"><i class="fas fa-arrow-circle-left"></i> Regresar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

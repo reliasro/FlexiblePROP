@@ -1,0 +1,67 @@
+@page
+@model ContosoUniversity.Pages.Configuraciones.DetailsModel
+
+@{
+    ViewData["Title"] = "Detalles";
+}
+
+<h1><i class="far fa-list-alt"></i> Detalles</h1>
+<p>@Model.UrlOrigen</p>
+<div>
+    <h4>Configuracion</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Configuracion.Codigo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Configuracion.Codigo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Configuracion.Descripcion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Configuracion.Descripcion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Configuracion.Modulo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Configuracion.Modulo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Configuracion.Valor)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Configuracion.Valor)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Configuracion.Valor2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Configuracion.Valor2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Configuracion.DesdeFecha)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Configuracion.DesdeFecha)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Configuracion.HastaFecha)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Configuracion.HastaFecha)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Configuracion.Activo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Configuracion.Activo)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Configuracion.ID"><i class="fas fa-pen"></i> Editar</a> |
+    <a asp-page="./Index"><i class="fas fa-arrow-circle-left"></i> Regresar</a>
+</div>

@@ -1,0 +1,50 @@
+@model ContosoUniversity.Models.Propiedad
+
+@*  Este codigo esta consumiendo IList y no ICollection para poder aplicar indexacion a los elementos 
+La herencia es IEnumerable > Icollection > IList | IEnumerable > IQueryable 
+S O L U C I O N : Definir las colecciones con la interface IList<>
+*@
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(t => t.AreasPropiedad[0].PropiedadID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(t => t.AreasPropiedad[0].UnidadEspacio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(t => t.AreasPropiedad[0].Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(t => t.AreasPropiedad[0].CantidadEspacio)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model.AreasPropiedad)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Propiedad.FichaPropiedad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnidadEspacio.Descripcion)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CantidadEspacio)
+            </td>
+            <td>
+                <a asp-area="Propiedades" asp-page="/dAreaPropiedad/Edit" asp-route-id="@item.ID"><i class="fas fa-pen"></i></a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

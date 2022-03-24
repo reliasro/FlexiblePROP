@@ -1,0 +1,44 @@
+@model ContosoUniversity.Models.Propiedad
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AvancesConstruccion[0].Propiedad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AvancesConstruccion[0].Fecha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AvancesConstruccion[0].Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AvancesConstruccion[0].PorcentajeAvance)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.AvancesConstruccion)
+        {
+
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Propiedad.FichaPropiedad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PorcentajeAvance)
+            </td>
+            <td>
+                <a asp-area="Propiedades" asp-page="/dAvanceConstruccion/Edit" asp-route-id="@item.ID"><i class="fas fa-pen"></i></a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

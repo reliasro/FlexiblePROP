@@ -1,0 +1,65 @@
+@model ContosoUniversity.Models.Propiedad
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Contratos[0].Propiedad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contratos[0].TipoContrato)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contratos[0].Descripcion)
+            </th>
+            <!--
+            <th>
+                @Html.DisplayNameFor(model => model.Contratos[0].FechaEntrega)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contratos[0].FechaFirma)
+            </th>
+            -->
+            <th>
+                @Html.DisplayNameFor(model => model.Contratos[0].Firmado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contratos[0].Legalizado)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Contratos)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Propiedad.FichaPropiedad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoContrato.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <!--
+    <td>
+        @Html.DisplayFor(modelItem => item.FechaEntrega)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.FechaFirma)
+    </td>
+    -->
+            <td>
+                @Html.DisplayFor(modelItem => item.Firmado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Legalizado)
+            </td>
+            <td>
+                <a asp-area="Propiedades" asp-page="/dContrato/Edit" asp-route-id="@item.ID"><i class="fas fa-pen"></i></a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

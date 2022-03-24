@@ -1,0 +1,62 @@
+@model ContosoUniversity.Models.Propiedad
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Seguros[0].Propiedad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Seguros[0].TipoSeguro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Seguros[0].MonedaValorAsegurado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Seguros[0].ValorAsegurado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Seguros[0].Fecha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Seguros[0].VigenciaDesde)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Seguros[0].VigenciaHasta)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Seguros)
+        {
+
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Propiedad.FichaPropiedad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoSeguro.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MonedaValorAsegurado.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorAsegurado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VigenciaDesde)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VigenciaHasta)
+            </td>
+            <td>
+                <a asp-area="Propiedades" asp-page="/dSeguro/Edit" asp-route-id="@item.ID"><i class="fas fa-pen"></i></a>
+            </td>
+        </tr>
+
+        }
+    </tbody>
+</table>

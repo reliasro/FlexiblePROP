@@ -1,0 +1,59 @@
+@model ContosoUniversity.Models.Propiedad
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TemasPendiente[0].Propiedad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TemasPendiente[0].TipoContrato)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TemasPendiente[0].Tema)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TemasPendiente[0].Descripcion)
+            </th>
+            <!--
+            <th>
+                @Html.DisplayNameFor(model => model.TemasPendiente[0].FechaReporte)
+            </th>
+            -->
+            <th>
+                @Html.DisplayNameFor(model => model.TemasPendiente[0].Estatus)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.TemasPendiente)
+        {
+
+            <tr >
+                <td>
+                    @Html.DisplayFor(modelItem => item.Propiedad.FichaPropiedad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TipoContrato.Descripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tema)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descripcion)
+                </td>
+                <!--
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaReporte)
+                </td>
+                -->
+                <td>
+                    @Html.DisplayFor(modelItem => item.Estatus)
+                </td>
+                <td>
+                    <a asp-page="/dTemaPendiente/Edit" asp-route-id="@item.ID"><i class="fas fa-pen"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

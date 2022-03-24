@@ -1,0 +1,62 @@
+@page
+@model ContosoUniversity.Areas.Propiedades.Pages.dContrato.CreateModel
+
+@{
+    ViewData["Title"] = "Crear";
+}
+
+<h1>Crear</h1>
+
+<h4>Contrato</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Contrato.PropiedadID" class="control-label"></label>
+                <select asp-for="Contrato.PropiedadID" class ="form-control" asp-items="ViewBag.PropiedadID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contrato.TipoContratoID" class="control-label"></label>
+                <select asp-for="Contrato.TipoContratoID" class ="form-control" asp-items="ViewBag.TipoContratoID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contrato.Descripcion" class="control-label"></label>
+                <input asp-for="Contrato.Descripcion" class="form-control" />
+                <span asp-validation-for="Contrato.Descripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contrato.FechaEntrega" class="control-label"></label>
+                <input asp-for="Contrato.FechaEntrega" class="form-control" />
+                <span asp-validation-for="Contrato.FechaEntrega" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contrato.FechaFirma" class="control-label"></label>
+                <input asp-for="Contrato.FechaFirma" class="form-control" />
+                <span asp-validation-for="Contrato.FechaFirma" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Contrato.Firmado" /> @Html.DisplayNameFor(model => model.Contrato.Firmado)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Contrato.Legalizado" /> @Html.DisplayNameFor(model => model.Contrato.Legalizado)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Crear" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Regresar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

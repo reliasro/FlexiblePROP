@@ -1,0 +1,54 @@
+@page
+@model ContosoUniversity.Areas.Propiedades.Pages.dInmobiliaria.CreateModel
+
+@{
+    ViewData["Title"] = "Crear";
+}
+
+<h1>Crear</h1>
+
+<h4>Inmobiliaria</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Inmobiliaria.Nombre" class="control-label"></label>
+                <input asp-for="Inmobiliaria.Nombre" class="form-control" />
+                <span asp-validation-for="Inmobiliaria.Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Inmobiliaria.Direccion" class="control-label"></label>
+                <input asp-for="Inmobiliaria.Direccion" class="form-control" />
+                <span asp-validation-for="Inmobiliaria.Direccion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Inmobiliaria.Contacto" class="control-label"></label>
+                <input asp-for="Inmobiliaria.Contacto" class="form-control" />
+                <span asp-validation-for="Inmobiliaria.Contacto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Inmobiliaria.Telefono" class="control-label"></label>
+                <input asp-for="Inmobiliaria.Telefono" class="form-control" />
+                <span asp-validation-for="Inmobiliaria.Telefono" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Inmobiliaria.Email" class="control-label"></label>
+                <input asp-for="Inmobiliaria.Email" class="form-control" />
+                <span asp-validation-for="Inmobiliaria.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Crear" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Regresar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

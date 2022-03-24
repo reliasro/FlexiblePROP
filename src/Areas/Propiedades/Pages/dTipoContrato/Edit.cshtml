@@ -1,0 +1,35 @@
+@page
+@model ContosoUniversity.Areas.Propiedades.Pages.dTipoContrato.EditModel
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<h1><i class="fas fa-pen"></i> Editar</h1>
+
+<h4>Tipo Contrato</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="TipoContrato.ID" />
+            <div class="form-group">
+                <label asp-for="TipoContrato.Descripcion" class="control-label"></label>
+                <input asp-for="TipoContrato.Descripcion" class="form-control" />
+                <span asp-validation-for="TipoContrato.Descripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index"><i class="fas fa-arrow-circle-left"></i> Regresar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

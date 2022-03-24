@@ -1,0 +1,46 @@
+@page
+@model ContosoUniversity.Areas.Propiedades.Pages.dRolCliente.IndexModel
+
+        @{
+        ViewData["Title"] = "RolCliente";
+        }
+        
+        <h1><i class="far fa-address-book"></i> RolCliente </h1>
+        
+        <p>
+            <a asp-page="Create"><i class="fas fa-plus-circle"></i> Nuevo</a>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.RolCliente[0].Codigo)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.RolCliente[0].Descripcion)
+                            </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.RolCliente) {
+                
+                 string filaSeleccionada = "";
+                 if (item.ID == Model.IDItemSeleccionado){filaSeleccionada = "table-success";}
+                
+                <tr class="@filaSeleccionada">
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Codigo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Descripcion)
+                            </td>
+                        <td>
+                            <a asp-page="./Index" asp-route-id="@item.ID"><i class="far fa-hand-pointer"></i></a> |
+                            <a asp-page="./Edit" asp-route-id="@item.ID"><i class="fas fa-pen"></i></a> |
+                            <a asp-page="./Delete" asp-route-id="@item.ID"><i class="fas fa-trash-alt"></i></a>
+                        </td>
+                </tr>
+                }
+            </tbody>
+        </table>

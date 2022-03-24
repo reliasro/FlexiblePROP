@@ -1,0 +1,79 @@
+@page
+@model ContosoUniversity.Pages.Prestamos.DetailsModel
+
+@{
+    ViewData["Title"] = "Detalles";
+}
+
+<h1><i class="far fa-list-alt"></i> Detalles</h1>
+
+<div>
+    <h4>Prestamo</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Prestamo.CodigoPrestamo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Prestamo.CodigoPrestamo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Prestamo.Beneficiario)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Prestamo.Beneficiario)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Prestamo.ValorPrestamo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Prestamo.ValorPrestamo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Prestamo.Emisor)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Prestamo.Emisor)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Prestamo.FechaEmision)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Prestamo.FechaEmision)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Prestamo.Tasa)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Prestamo.Tasa)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Prestamo.CantidadCuotas)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Prestamo.CantidadCuotas)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Prestamo.ValorCuotas)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Prestamo.ValorCuotas)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Prestamo.BalanceActual)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Prestamo.BalanceActual)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Prestamo.Observaciones)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Prestamo.Observaciones)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Prestamo.ID"><i class="fas fa-pen"></i> Editar</a> |
+    <a asp-page="./Index"><i class="fas fa-arrow-circle-left"></i> Regresar</a>
+</div>

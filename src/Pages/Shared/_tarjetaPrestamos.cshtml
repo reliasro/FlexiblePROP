@@ -1,0 +1,64 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<!--INICIO-->
+<h2><i class="fas fa-landmark"></i> Prestamos </h2>
+<p class="p-lg-2">Financie los proyectos via préstamos</p>
+<p></p>
+<div id="accordion">
+
+    <div class="card">
+        <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#pMaestros" aria-expanded="false" aria-controls="pMaestros">
+                    <i class="fas fa-folder-open"></i> Maestros
+                </button>
+            </h5>
+            <p>Lista de entidades para el funcionamiento del módulo</p>
+        </div>
+
+        <div id="pMaestros" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+                <ul class="list-group">
+                    <partial name="Items Menu/Prestamo/_maestrosPrestamo" />
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#pOperaciones" aria-expanded="false" aria-controls="pOperaciones">
+                    <i class="fas fa-pen"></i> Operaciones
+                </button>
+            </h5>
+            <p>Operaciones que puede realizar en este módulo</p>
+        </div>
+        <div id="pOperaciones" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body">
+                <ul class="list-group">
+                    <partial name="Items Menu/Prestamo/_procesosPrestamo" />
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingThree">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#lReportes" aria-expanded="false" aria-controls="lReportes">
+                    <i class="fas fa-file-invoice"></i>  Reportes
+                </button>
+            </h5>
+            <p>Genere reportes y analice su contenido para toma de desiciones</p>
+        </div>
+        <div id="lReportes" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="card-body">
+                <ul class="list-group">
+                    <partial name="Items Menu/Prestamo/_reportesPrestamo" />
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- FIN -->
+</div>

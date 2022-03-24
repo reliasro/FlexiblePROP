@@ -1,0 +1,76 @@
+@page
+@model ContosoUniversity.Areas.Propiedades.Pages.dSeguro.IndexModel
+
+        @{
+        ViewData["Title"] = "Seguro";
+        }
+        
+        <h1><i class="far fa-address-book"></i> Seguro </h1>
+        
+        <p>
+            <a asp-page="Create"><i class="fas fa-plus-circle"></i> Nuevo</a>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Seguro[0].Propiedad)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Seguro[0].TipoSeguro)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Seguro[0].MonedaValorAsegurado)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Seguro[0].Fecha)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Seguro[0].VigenciaDesde)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Seguro[0].VigenciaHasta)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Seguro[0].ValorAsegurado)
+                            </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Seguro) {
+                
+                 string filaSeleccionada = "";
+                 if (item.ID == Model.IDItemSeleccionado){filaSeleccionada = "table-success";}
+                
+                <tr class="@filaSeleccionada">
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Propiedad.FichaPropiedad)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TipoSeguro.Descripcion)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MonedaValorAsegurado.Descripcion)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Fecha)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.VigenciaDesde)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.VigenciaHasta)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ValorAsegurado)
+                            </td>
+                        <td>
+                            <a asp-page="./Index" asp-route-id="@item.ID"><i class="far fa-hand-pointer"></i></a> |
+                            <a asp-page="./Edit" asp-route-id="@item.ID"><i class="fas fa-pen"></i></a> |
+                            <a asp-page="./Delete" asp-route-id="@item.ID"><i class="fas fa-trash-alt"></i></a>
+                        </td>
+                </tr>
+                }
+            </tbody>
+        </table>

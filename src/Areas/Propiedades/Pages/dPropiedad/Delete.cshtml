@@ -1,0 +1,184 @@
+@page
+@model ContosoUniversity.Areas.Propiedades.Pages.dPropiedad.DeleteModel
+
+@{
+    ViewData["Title"] = "Borrar";
+}
+
+<h1><i class="fas fa-trash-alt"></i></h1>
+
+<p>Estas seguro de borrar este registro?</p>
+<div>
+    <h4>Propiedad</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Propiedad.TipoPropiedad)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Propiedad.TipoPropiedad.Descripcion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Propiedad.Vendedor)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Propiedad.Vendedor.Apellidos)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Propiedad.UnidadEspacio)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Propiedad.UnidadEspacio.Descripcion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Propiedad.MonedaValores)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Propiedad.MonedaValores.Descripcion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Propiedad.EstadoPropiedad)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Propiedad.EstadoPropiedad.Descripcion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Propiedad.PropietarioID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Propiedad.PropietarioID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Propiedad.Codigo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Propiedad.Codigo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Propiedad.Descripcion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Propiedad.Descripcion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Propiedad.FechaInicioConstruccion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Propiedad.FechaInicioConstruccion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Propiedad.FechaFinConstruccion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Propiedad.FechaFinConstruccion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Propiedad.CostoConstruccion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Propiedad.CostoConstruccion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Propiedad.MetrosConstruccion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Propiedad.MetrosConstruccion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Propiedad.Constructora)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Propiedad.Constructora)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Propiedad.FechaVenta)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Propiedad.FechaVenta)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Propiedad.FechaEntrega)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Propiedad.FechaEntrega)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Propiedad.FechaEntregaReal)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Propiedad.FechaEntregaReal)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Propiedad.FechaEntregaTitulo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Propiedad.FechaEntregaTitulo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Propiedad.Latitud)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Propiedad.Latitud)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Propiedad.Longitud)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Propiedad.Longitud)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Propiedad.DireccionEnProyecto)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Propiedad.DireccionEnProyecto)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Propiedad.PrecioLista)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Propiedad.PrecioLista)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Propiedad.PrecioVenta)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Propiedad.PrecioVenta)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Propiedad.PrecioRentaDiario)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Propiedad.PrecioRentaDiario)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Propiedad.Comision)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Propiedad.Comision)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Propiedad.ComisionRenta)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Propiedad.ComisionRenta)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Propiedad.Notas)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Propiedad.Notas)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Propiedad.DisponibleParaRenta)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Propiedad.DisponibleParaRenta)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Propiedad.ID" />
+        <input type="submit" value="Borrar" class="btn btn-danger" /> |
+        <a asp-page="./Index"><i class="fas fa-arrow-circle-left"></i> Regresar</a>
+    </form>
+</div>

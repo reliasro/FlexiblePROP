@@ -1,0 +1,55 @@
+@page
+@model ContosoUniversity.Areas.Propiedades.Pages.dTemaPendiente.DetailsModel
+
+@{
+    ViewData["Title"] = "Detalles";
+}
+
+<h1><i class="far fa-list-alt"></i> Detalles</h1>
+
+<div>
+    <h4>Tema Pendiente</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TemaPendiente.Propiedad)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TemaPendiente.Propiedad.Codigo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TemaPendiente.TipoContrato)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TemaPendiente.TipoContrato.Descripcion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TemaPendiente.Tema)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TemaPendiente.Tema)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TemaPendiente.Descripcion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TemaPendiente.Descripcion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TemaPendiente.FechaReporte)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TemaPendiente.FechaReporte)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TemaPendiente.Estatus)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TemaPendiente.Estatus)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.TemaPendiente.ID"><i class="fas fa-pen"></i> Editar</a> |
+    <a asp-page="./Index"><i class="fas fa-arrow-circle-left"></i> Regresar</a>
+</div>

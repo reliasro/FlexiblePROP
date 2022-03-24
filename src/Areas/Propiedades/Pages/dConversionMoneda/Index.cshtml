@@ -1,0 +1,58 @@
+@page
+@model ContosoUniversity.Areas.Propiedades.Pages.dConversionMoneda.IndexModel
+
+        @{
+        ViewData["Title"] = "ConversionMoneda";
+        }
+        
+        <h1><i class="far fa-address-book"></i> Conversion Moneda </h1>
+        
+        <p>
+            <a asp-page="Create"><i class="fas fa-plus-circle"></i> Nuevo</a>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ConversionMoneda[0].MonedaOrigen)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ConversionMoneda[0].MonedaDestino)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ConversionMoneda[0].FactorConversion)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ConversionMoneda[0].FechaConversion)
+                            </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.ConversionMoneda) {
+                
+                 string filaSeleccionada = "";
+                 if (item.ID == Model.IDItemSeleccionado){filaSeleccionada = "table-success";}
+                
+                <tr class="@filaSeleccionada">
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MonedaOrigen.Descripcion)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MonedaDestino.Descripcion)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FactorConversion)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FechaConversion)
+                            </td>
+                        <td>
+                            <a asp-page="./Index" asp-route-id="@item.ID"><i class="far fa-hand-pointer"></i></a> |
+                            <a asp-page="./Edit" asp-route-id="@item.ID"><i class="fas fa-pen"></i></a> |
+                            <a asp-page="./Delete" asp-route-id="@item.ID"><i class="fas fa-trash-alt"></i></a>
+                        </td>
+                </tr>
+                }
+            </tbody>
+        </table>

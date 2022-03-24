@@ -1,0 +1,50 @@
+@page
+@model ContosoUniversity.Areas.Propiedades.Pages.dConversionMoneda.EditModel
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<h1><i class="fas fa-pen"></i> Editar</h1>
+
+<h4>Conversion Moneda</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ConversionMoneda.ID" />
+            <div class="form-group">
+                <label asp-for="ConversionMoneda.MonedaOrigenID" class="control-label"></label>
+                <select asp-for="ConversionMoneda.MonedaOrigenID" class="form-control" asp-items="ViewBag.MonedaOrigenID"></select>
+                <span asp-validation-for="ConversionMoneda.MonedaOrigenID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConversionMoneda.MonedaDestinoID" class="control-label"></label>
+                <select asp-for="ConversionMoneda.MonedaDestinoID" class="form-control" asp-items="ViewBag.MonedaDestinoID"></select>
+                <span asp-validation-for="ConversionMoneda.MonedaDestinoID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConversionMoneda.FactorConversion" class="control-label"></label>
+                <input asp-for="ConversionMoneda.FactorConversion" class="form-control" />
+                <span asp-validation-for="ConversionMoneda.FactorConversion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConversionMoneda.FechaConversion" class="control-label"></label>
+                <input asp-for="ConversionMoneda.FechaConversion" class="form-control" />
+                <span asp-validation-for="ConversionMoneda.FechaConversion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index"><i class="fas fa-arrow-circle-left"></i> Regresar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

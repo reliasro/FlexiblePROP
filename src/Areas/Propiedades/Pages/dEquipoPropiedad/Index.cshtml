@@ -1,0 +1,76 @@
+@page
+@model ContosoUniversity.Areas.Propiedades.Pages.dEquipoPropiedad.IndexModel
+
+@{
+ViewData["Title"] = "EquipoPropiedad";
+}
+        
+<h1><i class="fas fa-couch"></i> Equipo Propiedad </h1>
+      
+<p>
+    <a asp-page="Create"><i class="fas fa-plus-circle"></i> Nuevo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EquipoPropiedad[0].Descripcion)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EquipoPropiedad[0].Marca)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EquipoPropiedad[0].Modelo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EquipoPropiedad[0].Serie)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EquipoPropiedad[0].Valor)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EquipoPropiedad[0].NombreImagen)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EquipoPropiedad[0].Propiedad)
+                    </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.EquipoPropiedad) {
+                
+            string filaSeleccionada = "";
+            if (item.ID == Model.IDItemSeleccionado){filaSeleccionada = "table-success";}
+                
+        <tr class="@filaSeleccionada">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descripcion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Marca)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Modelo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Serie)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Valor)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NombreImagen)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Propiedad.Codigo)
+                    </td>
+                <td>
+                    <a asp-page="./Index" asp-route-id="@item.ID"><i class="far fa-hand-pointer"></i></a> |
+                    <a asp-page="./Edit" asp-route-id="@item.ID"><i class="fas fa-pen"></i></a> |
+                    <a asp-page="./Delete" asp-route-id="@item.ID"><i class="fas fa-trash-alt"></i></a>
+                </td>
+        </tr>
+        }
+    </tbody>
+</table>

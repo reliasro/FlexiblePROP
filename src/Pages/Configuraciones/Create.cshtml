@@ -1,0 +1,73 @@
+@page
+@model ContosoUniversity.Pages.Configuraciones.CreateModel
+
+@{
+    ViewData["Title"] = "Crear";
+}
+
+<h1>Crear</h1>
+
+<h4>Configuracion</h4>
+<p>@Model.UrlOrigen</p>
+<br />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Configuracion.Codigo" class="control-label"></label>
+                <input asp-for="Configuracion.Codigo" class="form-control" />
+                <span asp-validation-for="Configuracion.Codigo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Configuracion.Descripcion" class="control-label"></label>
+                <input asp-for="Configuracion.Descripcion" class="form-control" />
+                <span asp-validation-for="Configuracion.Descripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Configuracion.Modulo" class="control-label"></label>
+                <!-- <input asp-for="Configuracion.Modulo" class="form-control" />-->
+                <select asp-for="Configuracion.Modulo" class="form-control">
+                    <partial name="_SeccionesConfigurables.cshtml" />
+                </select>
+                <span asp-validation-for="Configuracion.Modulo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Configuracion.Valor" class="control-label"></label>
+                <input asp-for="Configuracion.Valor" class="form-control" />
+                <span asp-validation-for="Configuracion.Valor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Configuracion.Valor2" class="control-label"></label>
+                <input asp-for="Configuracion.Valor2" class="form-control" />
+                <span asp-validation-for="Configuracion.Valor2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Configuracion.DesdeFecha" class="control-label"></label>
+                <input asp-for="Configuracion.DesdeFecha" class="form-control" />
+                <span asp-validation-for="Configuracion.DesdeFecha" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Configuracion.HastaFecha" class="control-label"></label>
+                <input asp-for="Configuracion.HastaFecha" class="form-control" />
+                <span asp-validation-for="Configuracion.HastaFecha" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Configuracion.Activo" /> @Html.DisplayNameFor(model => model.Configuracion.Activo)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Crear" class="btn btn-primary" asp-route-UrlOrigen="@ViewData["Origen"]" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Regresar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

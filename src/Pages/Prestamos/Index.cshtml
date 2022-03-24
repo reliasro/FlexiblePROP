@@ -1,0 +1,98 @@
+@page
+@model ContosoUniversity.Pages.Prestamos.IndexModel
+
+        @{
+        ViewData["Title"] = "Prestamo";
+        }
+        
+        <h1><i class="far fa-address-book"></i> Prestamo (s) </h1>
+        
+        <p>
+            <a asp-page="Create"><i class="fas fa-plus-circle"></i> Nuevo</a>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Prestamo[0].CodigoPrestamo)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Prestamo[0].Beneficiario)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Prestamo[0].ValorPrestamo)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Prestamo[0].Emisor)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Prestamo[0].FechaEmision)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Prestamo[0].Tasa)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Prestamo[0].CantidadCuotas)
+                            </th>
+                            <!--
+                            <th>
+                                @Html.DisplayNameFor(model => model.Prestamo[0].ValorCuotas)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Prestamo[0].BalanceActual)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Prestamo[0].Observaciones)
+                            </th>
+                            -->
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Prestamo) {
+                
+                 string filaSeleccionada = "";
+                 if (item.ID == Model.IDItemSeleccionado){filaSeleccionada = "table-success";}
+                
+                <tr class="@filaSeleccionada">
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CodigoPrestamo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Beneficiario)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ValorPrestamo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Emisor)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FechaEmision)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Tasa)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CantidadCuotas)
+                            </td>
+                            <!--
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ValorCuotas)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.BalanceActual)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Observaciones)
+                            </td>
+                            -->
+                        <td>
+                            <a asp-page="./Index" asp-route-id="@item.ID"><i class="far fa-hand-pointer"></i></a> |
+                            <a asp-page="./Edit" asp-route-id="@item.ID"><i class="fas fa-pen"></i></a> |
+                            <a asp-page="./Delete" asp-route-id="@item.ID"><i class="fas fa-trash-alt"></i></a>
+                        </td>
+                </tr>
+                }
+            </tbody>
+        </table>

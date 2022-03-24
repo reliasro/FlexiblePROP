@@ -1,0 +1,114 @@
+@page
+@model ContosoUniversity.Areas.Facturacion.Pages.DocFactura.IndexModel
+
+        @{
+        ViewData["Title"] = "Principal";
+        }
+        
+        <h1><i class="far fa-address-book"></i> Facturas</h1>
+        
+        <p>
+            <a asp-page="Create">Nuevo</a>
+        </p>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Factura[0].CodigoFactura)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Factura[0].Villa)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Factura[0].PropietarioVilla)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Factura[0].ValorFactura)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Factura[0].Emisor)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Factura[0].Moneda)
+                    </th>
+                    <!--
+                     <th>
+                         @Html.DisplayNameFor(model => model.Factura[0].FechaEmision)
+                     </th>
+                     <th>
+                         @Html.DisplayNameFor(model => model.Factura[0].FechaVencimiento)
+                     </th>
+                     <th>
+                         @Html.DisplayNameFor(model => model.Factura[0].LecturaInicial)
+                     </th>
+                     <th>
+                         @Html.DisplayNameFor(model => model.Factura[0].LecturaFinal)
+                     </th>
+                     <th>
+                        @Html.DisplayNameFor(model => model.Factura[0].Observaciones)
+                    </th>
+                     -->
+                    <th>
+                        @Html.DisplayNameFor(model => model.Factura[0].BalanceActual)
+                    </th>
+
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Factura) {
+                
+                 string filaSeleccionada = "";
+                 if (item.ID == Model.IDItemSeleccionado){filaSeleccionada = "table-success";}
+                
+                <tr class="@filaSeleccionada">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CodigoFactura)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Villa)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PropietarioVilla)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ValorFactura)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Emisor)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Moneda)
+                    </td>
+                    <!--
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FechaEmision)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FechaVencimiento)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LecturaInicial)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LecturaFinal)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Observaciones)
+                    </td>
+                      -->
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BalanceActual)
+                    </td>
+
+                    <td>
+                        <a asp-page="./Index" asp-route-id="@item.ID"><i class="far fa-hand-pointer"></i></a> |
+                        <a asp-page="./Edit" asp-route-id="@item.ID"><i class="fas fa-pen"></i></a> |
+                        <a asp-page="./Details" asp-route-id="@item.ID"><i class="far fa-list-alt"></i></a> |
+                        <a asp-page="./Delete" asp-route-id="@item.ID"><i class="fas fa-trash-alt"></i></a>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
