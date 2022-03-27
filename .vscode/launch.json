@@ -10,7 +10,7 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/Codigo Fuente/bin/Debug/net5.0/ContosoUniversity.dll",
+            "program": "${workspaceFolder}/Codigo Fuente/bin/Debug/net5.0/FlexiblePROP.dll",
             "args": [],
             "cwd": "${workspaceFolder}/Codigo Fuente",
             "stopAtEntry": false,
