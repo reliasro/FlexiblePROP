@@ -5,7 +5,7 @@ This is a project that I started months ago and where you can evaluate:
 
 ## Features
 - +EF Code First
-- +Dabase Modeling
+- +Database Modeling
 - +Clean user interface design
 - +Bootstrap 
 - +Razor pages
